@@ -9,7 +9,7 @@ let loader = new GLTFLoader();
 start();
 
 async function start() {
-    loader.load("./src/atlantic.gltf",function ( gltf ) {scene.add(gltf.scene);});
+    loader.load("/atlantic.gltf",function ( gltf ) {scene.add(gltf.scene);});
 
     function animate() {
       requestAnimationFrame( animate );
