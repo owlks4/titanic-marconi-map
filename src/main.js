@@ -22,8 +22,10 @@ TIME_RANGE.oninput = (e) => {
 let loader = new GLTFLoader();
 let marconiMessages = null
 
-const STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT = 25.0;
+const STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT = 15.0;
 const END_TIME_IN_MINUTES_SINCE_MIDNIGHT= 141;
+
+const TIMESCALE = 4;
 
 let titanic_time_minutes_since_midnight = STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT;
 let clockRunning = true;
@@ -67,7 +69,21 @@ function minutes_since_midnight_to_string_time(input) {
   let hours = Math.floor(minutes / 60);
   minutes = (minutes - (hours * 60))
 
-  return String(Math.round(hours)).padStart(2,"0") + ":" + String(Math.round(minutes)).padStart(2,"0") + "." + String(Math.round(seconds)).padStart(2,"0") + " am";
+  if (seconds >= 60){
+    seconds = 0;
+    minutes++;
+  }
+
+  if (minutes >= 60){
+    minutes = 0;
+    hours++;
+  }
+
+  if (hours == 0){
+    hours = 12;
+  }
+
+  return String(Math.floor(hours)).padStart(2,"0") + ":" + String(Math.floor(minutes)).padStart(2,"0") + "." + String(Math.floor(seconds)).padStart(2,"0") + " am";
 }
 
 function displayCurrentMarconiMessage(){
@@ -90,7 +106,7 @@ function displayCurrentMarconiMessage(){
     console.log(currentMessage.sender + ":")
     console.log(currentMessage.content);
     console.log(currentMessageMorseCode);
-    currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender),currentMessage.content.toUpperCase(),[0,25,0],"message-box")
+    currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender.replace(" ","_")),currentMessage.content.toUpperCase(),[0,15,0],"message-box")
   }
 }
   
@@ -102,8 +118,9 @@ async function start() {
     updateVisualClock();
     loader.load(atlantic,async function (gltf) {
         await scene.add(gltf.scene);
+        console.log(scene)
         participantNames.forEach(participantName => {
-          let obj = scene.getObjectByName(participantName);
+          let obj = scene.getObjectByName(participantName.replace(" ","_"));
           if (obj != null){
             spawn2DText(obj, participantName, [0,6,0], "name-bold")
           } else {
@@ -115,7 +132,7 @@ async function start() {
     function animate() {
       requestAnimationFrame( animate );
       let now = Date.now()
-      if (clockRunning && titanic_time_minutes_since_midnight < END_TIME_IN_MINUTES_SINCE_MIDNIGHT && now - lastTimeClockUpdated >= 1000){
+      if (clockRunning && titanic_time_minutes_since_midnight < END_TIME_IN_MINUTES_SINCE_MIDNIGHT && now - lastTimeClockUpdated >= 1000/TIMESCALE){
         titanic_time_minutes_since_midnight += 0.01666666666; //tick clock by one second
         console.log("tick")
         displayCurrentMarconiMessage()

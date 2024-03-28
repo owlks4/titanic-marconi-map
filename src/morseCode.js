@@ -44,6 +44,8 @@ const morseCodeDictionary = {
 }
 
 const shipNameAbbreviations = {
+    "received":"rd",
+    "end of message":"tis",
     "stop talking":"ddd",
     "this is":"de",
     "old man":"om",
@@ -59,6 +61,7 @@ const shipNameAbbreviations = {
     "cincinnati":"ddc",
     "carpathia":"mpa",
     "frankfurt":"dft",
+    "ypiranga":"dya",
     "la provence":"mlp",
     "mount temple":"mlq",
     "minnehaha":"mma",

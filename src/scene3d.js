@@ -33,8 +33,8 @@ function createScene(){
     document.body.appendChild( renderer.domElement );
 
     controls = new OrbitControls( camera, renderer.domElement );
-    camera.position.set(0, 114.7584, 176.51072);
-    controls.target.set(0, -34.59784, 28)
+    camera.position.set(12.22, 132.01, 176.95);
+    controls.target.set(10.52, 17.37, 7.51)
     controls.update();
 }
 
@@ -57,6 +57,12 @@ function spawn2DText(parentObject, text, position, extraTextClass){
     morseHolder.className = "label-toggle morse";
     morseHolder.textContent = toMorseCodeFromText(text);
     div.appendChild(morseHolder);
+
+    if (extraTextClass == "message-box"){
+        let speechBubbleTail = document.createElement('div');
+        speechBubbleTail.className = "speech-bubble-tail";
+        div.appendChild(speechBubbleTail);
+    }
 
     if (position == null){
         position = [0,0,0];
