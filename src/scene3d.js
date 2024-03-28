@@ -1,12 +1,14 @@
 import * as THREE from "three"
 import { OrbitControls } from "./OrbitControls.js";
-import {Text} from 'troika-three-text'
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import {toMorseCodeFromText} from "./morseCode.js"
 
 let scene = null;
 let renderer = null;
 let controls = null;
 let camera = null;
 let font = null;
+let labelRenderer = null;
 
 function createScene(){
     scene = new THREE.Scene();
@@ -18,27 +20,54 @@ function createScene(){
     directionalLight.target.position.set(10,-10,-10)
     scene.add( directionalLight );
     scene.add( light );
+
+    labelRenderer = new CSS2DRenderer();
+	labelRenderer.setSize( window.innerWidth, window.innerHeight );
+	labelRenderer.domElement.style.position = 'absolute';
+	labelRenderer.domElement.style.top = '0px';
+    labelRenderer.domElement.className = "no-raycast"
+	document.body.appendChild( labelRenderer.domElement );
     
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
     controls = new OrbitControls( camera, renderer.domElement );
-    camera.position.set(135.4146, 134.7584, 146.51072);
-    controls.target.set(72, -34.59784, 28)
+    camera.position.set(0, 114.7584, 176.51072);
+    controls.target.set(0, -34.59784, 28)
     controls.update();
 }
 
-function spawn3DText(worldPosition,str){
-    let text = new Text()
-    scene.add(text)
-    text.text = str;
-    text.fontSize = 1;
-    text.position.set(worldPosition[0],worldPosition[1],worldPosition[2]);
-    text.rotation.x = -Math.PI/2;
-    text.color = "rgb(0,15,159)";
-    text.anchorX = "center";    
-    text.sync();
+function spawn2DText(parentObject, text, position, extraTextClass){
+
+    const div = document.createElement('div');
+
+    if (extraTextClass == null){
+        div.className = 'label';
+    } else {
+        div.className = "label " + extraTextClass;
+    }
+	
+    let textHolder = document.createElement('div');
+    textHolder.className = "label-toggle text";
+    textHolder.textContent = text;
+    div.appendChild(textHolder);
+
+    let morseHolder = document.createElement('div');
+    morseHolder.className = "label-toggle morse";
+    morseHolder.textContent = toMorseCodeFromText(text);
+    div.appendChild(morseHolder);
+
+    if (position == null){
+        position = [0,0,0];
+    }
+	const label = new CSS2DObject(div);
+	label.position.set(position[0],position[1],position[2]);
+	label.center.set( 0.5, 1 );
+	parentObject.add(label);
+	label.layers.set( 0 );
+
+    return [parentObject, label];
 }
 
-export {createScene,scene,renderer,controls,camera, spawn3DText}
+export {createScene,scene,renderer,controls,camera, spawn2DText,labelRenderer}

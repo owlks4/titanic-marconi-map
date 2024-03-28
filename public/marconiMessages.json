@@ -5,58 +5,59 @@
 		{	
 		"sender":"Titanic",
 		"intended_recipient":"",
-		"time":"12:25.00",
-		"content":"CQD DE MGY"
+		"time":"00:25:00",
+		"content":"CQD THIS IS TITANIC"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"",
-		"time":"12:25.10",
-		"content":"CQD DE MGY"
+		"time":"00:25:10",
+		"content":"CQD THIS IS TITANIC"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"",
-		"time":"12:25.20",
-		"content":"CQD DE MGY"
+		"time":"00:25:20",
+		"content":"CQD THIS IS TITANIC"
 		},
 		{	
 		"sender":"Titanic",
-		"time":"12:25.30",
-		"content":"CQD DE MGY"
+		"time":"00:25:30",
+		"content":"CQD THIS IS TITANIC"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"",
-		"time":"12:25.40",
-		"content":"CQD DE MGY"
+		"time":"00:25:40",
+		"content":"CQD THIS IS TITANIC"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"",
-		"time":"12:25.50",
-		"content":"CQD DE MGY"
-		}{	
+		"time":"00:25:50",
+		"content":"CQD THIS IS TITANIC"
+		},
+		{	
 		"sender":"Titanic",
-		"time":"12:26.00",
+		"time":"00:26:00",
 		"content":"POSITION 41.44N 50.24W"
 		},
 		{
 		"sender":"Mount Temple",
 		"intended_recipient":"Titanic",
-		"time":"12:26.10",
+		"time":"00:26:10",
 		"content":"WHAT IS THE MATTER?"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"Mount Temple",
-		"time":"12:27.00",
+		"time":"00:27:00",
 		"content":"Can not read you old man but here my position 41.46 N. 50.14 W. Come at once. Have struck berg"
 		},
 		{
 		"sender":"Titanic",
 		"intended_recipient":"Carpathia",
-		"time":"12:37.00",
+		"time":"00:37:00",
 		"content":"STRUCK ICEBERG. COME TO OUR ASSISTANCE AT ONCE."
 		}
 	]
