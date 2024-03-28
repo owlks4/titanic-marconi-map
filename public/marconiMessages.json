@@ -1,5 +1,5 @@
 {
-"note":"I've used CanadaDan's message transcription for this (except corrected to Paul Lee's timings), because it attributes the content of the messages to their speakers, rather than reporting the paraphrases written down by the recipients, which is how they are listed in the primary sources. The latter method is more accurate, but doesn't translate as well to a format like this, where the speakers are portrayed sending the messages in the first instance. So this gives a better impression of what was said, but is not actually what was said, because no vessel made a direct transcription on the night. If you *are* interested in the actual logs, rather than a portrayal, do check out Dr Paul Lee's website here http://www.paullee.com/titanic/pv.php",
+"note":"I've used CanadaDan's message transcription for this, because it attributes the content of the messages to their speakers, rather than reporting the paraphrases written down by the recipients, which is how they are listed in the primary sources. The latter method is more accurate, but doesn't translate as well to a format like this, where the speakers are portrayed sending the messages in the first instance. So this gives a better impression of what was said, but is not *actually* what was said, because no such direct transcription exists. If you *are* interested in the actual logs, rather than a portrayal, do check out Dr Paul Lee's website here http://www.paullee.com/titanic/pv.php",
 "messages":
 	[
 		{	
@@ -59,7 +59,6 @@
 		},
 		{	
 		"sender":"Frankfurt",
-		"intended_recipient":"Titanic",
 		"time":"00:16:34",
 		"content":"OK. STAND BY"
 		},
@@ -78,7 +77,7 @@
 		"sender":"Titanic",
 		"intended_recipient":"Mount Temple",
 		"time":"00:17:04",
-		"content":"Can not read you old man but here my position 41.46 N. 50.14 W. Come at once. Have struck a berg"
+		"content":"Can not read you old man but here my position 41.46N. 50.14W. Come at once. Have struck a berg"
 		},
 		{
 		"sender":"Mount Temple",
@@ -102,14 +101,9 @@
 		},
 		{	
 		"sender":"Mount Temple",
-		"time":"00:18:05",
-		"content":"ATTENTION ALL STATIONS: THIS IS MOUNT TEMPLE. TTANIC SENDING CQD. SAYS REQUIRES ASSISTANCE. CANNOT HEAR ME. ADVISE MY CAPTAIN HIS POSITION AT 41.46N 50.24W"
-		},
-		{	
-		"sender":"Cape Race",
 		"intended_recipient":"All stations",
-		"time":"00:18:50",
-		"content":"ATTENTION ALL STATIONS: THIS IS CAPE RACE"
+		"time":"00:18:05",
+		"content":"TITANIC SENDING CQD. SAYS REQUIRES ASSISTANCE. CANNOT HEAR ME. ADVISE MY CAPTAIN HIS POSITION AT 41.46N 50.24W"
 		},
 		{	
 		"sender":"Cape Race",
@@ -119,43 +113,28 @@
 		},
 		{	
 		"sender":"Cape Race",
-		"intended_recipient":"All stations",
 		"time":"00:19:15",
 		"content":"POSITION 41.44N 50.24W"
 		},
 		{	
 		"sender":"Ypiranga",
 		"intended_recipient":"All stations",
-		"time":"00:19:30",
-		"content":"ATTENTION ALL STATIONS"
-		},
-		{	
-		"sender":"Ypiranga",
-		"intended_recipient":"All stations",
 		"time":"00:19:35",
-		"content":"THIS IS YPIRANGA. TITANIC GIVES CQD HERE:"
+		"content":"TITANIC GIVES CQD HERE:"
 		},
 		{	
 		"sender":"Ypiranga",
-		"intended_recipient":"All stations",
 		"time":"00:19:50",
 		"content":"41.44N 50.24W REQUIRE ASSISTANCE"
 		},
 		{	
 		"sender":"Ypiranga",
 		"intended_recipient":"All stations",
-		"time":"00:20:05",
-		"content":"ATTENTION ALL STATIONS"
-		},
-		{	
-		"sender":"Ypiranga",
-		"intended_recipient":"All stations",
 		"time":"00:20:10",
-		"content":"THIS IS YPIRANGA. TITANIC GIVES CQD HERE:"
+		"content":"TITANIC GIVES CQD HERE:"
 		},
 		{	
 		"sender":"Ypiranga",
-		"intended_recipient":"All stations",
 		"time":"00:20:25",
 		"content":"41.44N 50.24W REQUIRE ASSISTANCE"
 		},
@@ -197,17 +176,13 @@
 		},
 		{
 		"sender":"Cape Race",
-		"time":"00:27:15",
-		"content":"ATTENTION ALL SHIPS: THIS IS CAPE RACE"
-		},
-		{
-		"sender":"Cape Race",
-		"time":"00:27:25",
+		"intended_recipient":"All ships",
+		"time":"00:27:00",
 		"content":"TITANIC GIVES CORRECTED POSITION"
 		},
 		{
 		"sender":"Cape Race",
-		"time":"00:27:35",
+		"time":"00:27:25",
 		"content":"41.46N 50.14W"
 		},
 		{
@@ -217,32 +192,15 @@
 		},
 		{
 		"sender":"Birma",
+		"intended_recipient":"Titanic",
 		"time":"00:28:05",
 		"content":"WHAT IS YOUR POSITION?"
 		},
-		{
-		"sender":"Titanic",
-		"intended_recipient":"Olympic",
-		"time":"01:17:20",
-		"content":"CAPTAIN SAYS GET YOUR BOATS READY. GOING DOWN FAST AT THE HEAD"
-		},
-		{
-		"sender":"Frankfurt",
-		"intended_recipient":"Titanic",
-		"time":"01:17:50",
-		"content":"OUR CAPTAIN WILL GO FOR YOUR COURSE"
-		},
-		{
-		"sender":"Titanic",
-		"intended_recipient":"Frankfurt",
-		"time":"01:18:20",
-		"content":"OK THANKS"
-		},
-		{
-		"sender":"Caronia",
-		"intended_recipient":"Noordam",
-		"time":"01:18:20",
-		"content":"PLEASE TELL MGY WE ARE MAKING TOWARDS HER"
+		{	
+		"sender":"Californian",
+		"intended_recipient":"",
+		"time":"99:99:99",
+		"content":"(This message is here to make Californian show up as a name on the map; this is because a ship must send a message to be granted a name)"
 		}
 	]
 }

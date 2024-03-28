@@ -38,7 +38,7 @@ function createScene(){
     controls.update();
 }
 
-function spawn2DText(parentObject, text, position, extraTextClass){
+function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributionText){
 
     const div = document.createElement('div');
 
@@ -64,11 +64,23 @@ function spawn2DText(parentObject, text, position, extraTextClass){
         div.appendChild(speechBubbleTail);
     }
 
-    if (position == null){
-        position = [0,0,0];
+    if (attributionText != null){
+        let attributionTextDiv = document.createElement('div');
+        attributionTextDiv.className = "attribution-text"
+        attributionTextDiv.innerText = attributionText;
+        div.appendChild(attributionTextDiv);
+    }
+
+    let boundingBox = new THREE.Box3().setFromObject(parentObject);
+    let height = boundingBox.max.y - boundingBox.min.y;
+
+    console.log(height)
+
+    if (yMultiplier == null){
+        yMultiplier = 1;
     }
 	const label = new CSS2DObject(div);
-	label.position.set(position[0],position[1],position[2]);
+	label.position.set(0, yMultiplier * height, 0);
 	label.center.set( 0.5, 1 );
 	parentObject.add(label);
 	label.layers.set( 0 );

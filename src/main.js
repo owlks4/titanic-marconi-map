@@ -25,7 +25,7 @@ let marconiMessages = null
 const STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT = 15.0;
 const END_TIME_IN_MINUTES_SINCE_MIDNIGHT= 141;
 
-const TIMESCALE = 4;
+const TIMESCALE = 3;
 
 let titanic_time_minutes_since_midnight = STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT;
 let clockRunning = true;
@@ -42,11 +42,13 @@ marconiMessages = await response.json();
 marconiMessages.messages.forEach(message => {
   message.content = message.content.toUpperCase()
   message.time = string_time_to_minutes_since_midnight(message.time)
-  console.log(message.time)
+  if (message.intended_recipient == ""){
+    message.intended_recipient = null;
+  }
   if (!participantNames.includes(message.sender)){
     participantNames.push(message.sender);
   }
-  if (!message.intended_recipient == "" && !participantNames.includes(message.intended_recipient)){
+  if (!message.intended_recipient == null && !participantNames.includes(message.intended_recipient)){
     participantNames.push(message.intended_recipient);
   }
 });
@@ -97,7 +99,7 @@ function displayCurrentMarconiMessage(){
 
   if (potentialMessageForDisplay != currentMessage){
 
-    if (currentMessage != null){
+    if (currentMessage != null && currentMessageTextElements != null){
       currentMessageTextElements[0].remove(currentMessageTextElements[1])
     }
 
@@ -106,10 +108,14 @@ function displayCurrentMarconiMessage(){
     console.log(currentMessage.sender + ":")
     console.log(currentMessage.content);
     console.log(currentMessageMorseCode);
-    currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender.replace(" ","_")),currentMessage.content.toUpperCase(),[0,15,0],"message-box")
+    currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender.replace(" ","_")),
+                                             currentMessage.content.toUpperCase(),
+                                             1.4,
+                                             "message-box",
+                                             (currentMessage.intended_recipient == null ? "" : currentMessage.sender + " to " + currentMessage.intended_recipient));
   }
 }
-  
+
 function updateVisualClock(){
   TIME_DISPLAY.innerText = minutes_since_midnight_to_string_time(titanic_time_minutes_since_midnight);
 }
@@ -122,7 +128,7 @@ async function start() {
         participantNames.forEach(participantName => {
           let obj = scene.getObjectByName(participantName.replace(" ","_"));
           if (obj != null){
-            spawn2DText(obj, participantName, [0,6,0], "name-bold")
+            spawn2DText(obj, participantName, 0.8, "name-bold")
           } else {
             console.log("Was expecting an object called "+participantName+" to be in the scene... but couldn't find it!")
           }

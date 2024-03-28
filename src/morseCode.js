@@ -40,12 +40,14 @@ const morseCodeDictionary = {
     "?": "..--..",
     "'": ".----.",
     "!": "-.-.--",
+    ":": "---...",
     " ": "/"
 }
 
 const shipNameAbbreviations = {
     "received":"rd",
     "end of message":"tis",
+    "attention all stations":"cq",
     "stop talking":"ddd",
     "this is":"de",
     "old man":"om",
