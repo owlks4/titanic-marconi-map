@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { OrbitControls } from "./OrbitControls.js";
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
-import {toMorseCodeFromText} from "./morseCode.js"
+import {toMorseCodeFromText, playMorseCodeAsTone} from "./morseCode.js"
 
 let scene = null;
 let renderer = null;
@@ -38,7 +38,7 @@ function createScene(){
     controls.update();
 }
 
-function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributionText){
+function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributionText, subscript){
 
     const div = document.createElement('div');
 
@@ -56,6 +56,8 @@ function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributio
     let morseHolder = document.createElement('div');
     morseHolder.className = "label-toggle morse";
     morseHolder.textContent = toMorseCodeFromText(text);
+    morseHolder.title = text;
+    morseHolder.onclick = () => {playMorseCodeAsTone(morseHolder.textContent,{},true)}
     div.appendChild(morseHolder);
 
     if (extraTextClass == "message-box"){
@@ -71,10 +73,15 @@ function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributio
         div.appendChild(attributionTextDiv);
     }
 
+    if (subscript != null){
+        let subscriptDiv = document.createElement('div');
+        subscriptDiv.className = "subscript-text"
+        subscriptDiv.innerText = subscript;
+        div.appendChild(subscriptDiv);
+    }
+
     let boundingBox = new THREE.Box3().setFromObject(parentObject);
     let height = boundingBox.max.y - boundingBox.min.y;
-
-    console.log(height)
 
     if (yMultiplier == null){
         yMultiplier = 1;

@@ -2,9 +2,9 @@ import "./style.css";
 import { GLTFLoader } from "./GLTFLoader.js";
 import {createScene,scene,renderer,controls,camera,spawn2DText,labelRenderer} from "./scene3d.js";
 import atlantic from "/atlantic.gltf?url"
-import { isObject } from "tone";
 import marconiMessagesUrl from "/marconiMessages.json?url"
-import {toMorseCodeFromText} from "./morseCode.js"
+import {toMorseCodeFromText, shipNameAbbreviations, playMorseCodeAsTone} from "./morseCode.js"
+import {STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT, END_TIME_IN_MINUTES_SINCE_MIDNIGHT, TIMESCALE} from "./consts.js"
 
 createScene();
 
@@ -22,10 +22,6 @@ TIME_RANGE.oninput = (e) => {
 let loader = new GLTFLoader();
 let marconiMessages = null
 
-const STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT = 15.0;
-const END_TIME_IN_MINUTES_SINCE_MIDNIGHT= 141;
-
-const TIMESCALE = 3;
 
 let titanic_time_minutes_since_midnight = STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT;
 let clockRunning = true;
@@ -37,21 +33,12 @@ let currentMessageTextElements = null;
 
 let participantNames = [];
 
-const response = await fetch(marconiMessagesUrl);
-marconiMessages = await response.json();
-marconiMessages.messages.forEach(message => {
-  message.content = message.content.toUpperCase()
-  message.time = string_time_to_minutes_since_midnight(message.time)
-  if (message.intended_recipient == ""){
-    message.intended_recipient = null;
+Object.keys(shipNameAbbreviations).forEach(shipName => {
+  if (!participantNames.includes(shipName) && shipName[0] == shipName[0].toUpperCase()){ //i.e. it was always upper case
+    participantNames.push(shipName);
+    console.log("Naming "+shipName+" by pilfering their name from the morse code callsign dictionary (evidently, we couldn't get their name from the marconi messages json).")
   }
-  if (!participantNames.includes(message.sender)){
-    participantNames.push(message.sender);
-  }
-  if (!message.intended_recipient == null && !participantNames.includes(message.intended_recipient)){
-    participantNames.push(message.intended_recipient);
-  }
-});
+})
 
 start();
 
@@ -105,14 +92,13 @@ function displayCurrentMarconiMessage(){
 
     currentMessage = potentialMessageForDisplay;
     currentMessageMorseCode = toMorseCodeFromText(currentMessage.content)
-    console.log(currentMessage.sender + ":")
-    console.log(currentMessage.content);
-    console.log(currentMessageMorseCode);
+    console.log(currentMessage.sender + ": " + currentMessage.content)
     currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender.replace(" ","_")),
                                              currentMessage.content.toUpperCase(),
                                              1.4,
                                              "message-box",
-                                             (currentMessage.intended_recipient == null ? "" : currentMessage.sender + " to " + currentMessage.intended_recipient));
+                                             (currentMessage.intended_recipient == null ? "" : currentMessage.sender + " to " + currentMessage.intended_recipient),
+                                             currentMessage.subscript);
   }
 }
 
@@ -121,10 +107,26 @@ function updateVisualClock(){
 }
 
 async function start() {
+    const response = await fetch(marconiMessagesUrl);
+    marconiMessages = await response.json();
+    marconiMessages.messages.forEach(message => {
+      message.content = message.content.toUpperCase()
+      message.time = string_time_to_minutes_since_midnight(message.time)
+      if (message.intended_recipient == ""){
+        message.intended_recipient = null;
+      }
+      if (!participantNames.includes(message.sender)){
+        participantNames.push(message.sender);
+      }
+      if (!message.intended_recipient == null && !participantNames.includes(message.intended_recipient)){
+        participantNames.push(message.intended_recipient);
+      }
+    });
+
     updateVisualClock();
+
     loader.load(atlantic,async function (gltf) {
         await scene.add(gltf.scene);
-        console.log(scene)
         participantNames.forEach(participantName => {
           let obj = scene.getObjectByName(participantName.replace(" ","_"));
           if (obj != null){
@@ -140,7 +142,6 @@ async function start() {
       let now = Date.now()
       if (clockRunning && titanic_time_minutes_since_midnight < END_TIME_IN_MINUTES_SINCE_MIDNIGHT && now - lastTimeClockUpdated >= 1000/TIMESCALE){
         titanic_time_minutes_since_midnight += 0.01666666666; //tick clock by one second
-        console.log("tick")
         displayCurrentMarconiMessage()
         lastTimeClockUpdated = now;
         updateVisualClock()
@@ -152,3 +153,5 @@ async function start() {
     }
     animate();
 }
+
+export {TIMESCALE}

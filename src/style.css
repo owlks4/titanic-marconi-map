@@ -53,6 +53,7 @@ canvas:active {
 
 .label .label-toggle {
   max-width: 16em;
+  cursor:pointer;
 }
 
 .label:not(:hover) .label-toggle.morse  {
@@ -66,7 +67,7 @@ canvas:active {
 .name-bold {
   font-weight: bold;
   z-index: 5 !important;
-  color:rgba(255,255,255,0.8);
+  color:rgba(255,255,255,0.75);
 }
 
 .message-box {
@@ -122,4 +123,25 @@ canvas:active {
   white-space: nowrap;
   color:#848cff;
   font-size: 0.85em;
+}
+
+.subscript-text {
+  bottom: 0;
+  right: 0;
+  transform: translate(0,33.3%);
+  position:absolute;
+  z-index: 4 !important;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+  color:rgba(255,255,255,0.5);
+  font-size: 0.85em;
+}
+
+#disclaimer {
+  position:absolute;
+  bottom:0;
+  text-align:center;
+  width:100%;
+  opacity:0.5;
+  font-weight:normal;
 }
