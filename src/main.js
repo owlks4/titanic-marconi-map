@@ -12,6 +12,26 @@ let TIME_DISPLAY = document.getElementById("time-display")
 let TIME_RANGE = document.getElementById("time-range");
 TIME_RANGE.value = 0;
 
+document.getElementById("next-message-button").onclick = () => {
+  for (let i = 0; i < marconiMessages.messages.length; i++){
+    if (titanic_time_minutes_since_midnight < marconiMessages.messages[i].time){
+      titanic_time_minutes_since_midnight = marconiMessages.messages[i].time;
+      displayCurrentMarconiMessage();
+      return;
+    }
+  }
+};
+
+document.getElementById("prev-message-button").onclick = () => {
+  for (let i = marconiMessages.messages.length - 1; i >= 0; i--){
+    if (titanic_time_minutes_since_midnight > marconiMessages.messages[i].time){
+      titanic_time_minutes_since_midnight = marconiMessages.messages[i > 0 ? i-1 : 0].time;
+      displayCurrentMarconiMessage();
+      return;
+    }
+  }
+};
+
 TIME_RANGE.oninput = (e) => {
   let newValue = e.target.value;
   titanic_time_minutes_since_midnight = STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT + (newValue * (END_TIME_IN_MINUTES_SINCE_MIDNIGHT - STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT))
@@ -93,6 +113,7 @@ function displayCurrentMarconiMessage(){
     currentMessage = potentialMessageForDisplay;
     currentMessageMorseCode = toMorseCodeFromText(currentMessage.content)
     console.log(currentMessage.sender + ": " + currentMessage.content)
+    playMorseCodeAsTone(toMorseCodeFromText(currentMessage.sender), currentMessage, true) //sending the sender's name instead of the message is intentional; it gives a relevant, thematic morse code audio cue to tell the user that someone is speaking, without inundating them with extremely long messages, which would make the user want to rip their ears off, as they'd never get a break from it
     currentMessageTextElements = spawn2DText(scene.getObjectByName(currentMessage.sender.replace(" ","_")),
                                              currentMessage.content.toUpperCase(),
                                              1.4,
