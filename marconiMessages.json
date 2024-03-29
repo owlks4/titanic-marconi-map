@@ -187,11 +187,300 @@
 		"time":"00:28:05",
 		"content":"WHAT IS YOUR POSITION?"
 		},
-		{	
-		"sender":"Californian",
-		"intended_recipient":"",
-		"time":"99:99:99",
-		"content":"(This message is here to make Californian show up as a name on the map; this is because a ship must send a message to be granted a name)"
+		{
+		"sender":"Titanic",
+		"time":"00:28:25",
+		"content":"POSITION 41.46 N 50.14W REQUIRE IMMEDIATE ASSISTANCE."
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:28:50",
+		"content":"WE HAVE COLLISION WITH ICEBERG. SINKING. CAN HEAR NOTHING FOR NOISE OF STEAM"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Ypiranga",
+		"time":"00:29:15",
+		"content":"TITANIC CQD"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Ypiranga",
+		"time":"00:29:30",
+		"content":"HERE CORRECTED POSITION 41.46N 50.14W"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Ypiranga",
+		"time":"00:29:50",
+		"content":"WE HAVE COLLISION WITH ICBERG. SINKING. CAN HEAR NOTHING FOR NOISE OF STEAM"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:30:15",
+		"content":"TITANIC CQD I REQUIRE ASSISTANCE IMMEDIATELY."
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:30:40",
+		"content":"STRUCK BY ICEBERG."
+		},
+		{
+		"sender":"Caronia",
+		"intended_recipient":"Baltic",
+		"time":"00:30:55",
+		"content":"CQD TITANIC STRUCK ICEBERG REQUIRE IMMEDIATE ASSISTANCE"
+		},
+		{
+		"sender":"Mount Temple",
+		"intended_recipient":"Titanic",
+		"time":"00:31:25",
+		"content":"OUR CAPTAIN REVERSES SHIP. WE ARE ABOUT 50 MILES OFF."
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"00:34:00",
+		"content":"POSITION 39.47N 50.10W"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Frankfurt",
+		"time":"00:34:20",
+		"content":"ARE YOU COMING TO OUR ASSISTANCE?"
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"00:34:40",
+		"content":"WHAT IS THE MATTER WITH YOU?"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Frankfurt",
+		"time":"00:35:00",
+		"content":"WE HAVE STRUCK AN ICEBERG AND SINKING. PLEASE TELL CAPTAIN TO COME."
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"00:35:25",
+		"content":"OK WILL TELL THE BRIDGE RIGHT AWAY."
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:35:48",
+		"content":"OK, YES QUICK."
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Carpathia",
+		"time":"00:36:10",
+		"content":"WE REQUIRE IMMEDIATE ASSISTANCE."
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Carpathia",
+		"time":"00:36:35",
+		"content":"OLD MAN WE ARE 58 MILES OFF."
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:36:55",
+		"content":"ALRIGHT OLD MAN."
+		},
+		{
+		"sender":"Olympic",
+		"intended_recipient":"Titanic",
+		"time":"00:37:15",
+		"content":"SENDING SERVICE MESSAGE"
+		},
+		{
+		"sender":"Olympic",
+		"intended_recipient":"Titanic",
+		"time":"00:37:25",
+		"content":"OLYMPIC TO TITANIC"
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Titanic",
+		"time":"00:37:35",
+		"content":"DON'T YOU HEAR OLYMPIC CALLING YOU?"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Carpathia",
+		"time":"00:37:55",
+		"content":"NO OLD MAN I CAN'T READ HIM FOR RUSH OF AIR AND NOISE OF STEAM."
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Olympic",
+		"time":"00:45:00",
+		"content":"SOS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:45:05",
+		"content":"CQD SOS THIS IS TITANIC"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:45:15",
+		"content":"WE HAVE STRUCK ICEBERG"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:45:35",
+		"content":"SINKING FAST. COME TO OUR ASSISTANCE."
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Californian",
+		"time":"00:46:00",
+		"content":"CQD CQD STRUCK ICEBERG. SINKING"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:46:25",
+		"content":"REQUIRE IMMEDIATE ASSISTANCE"
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Californian",
+		"time":"00:46:50",
+		"content":"SOS FROM TITANIC"
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Californian",
+		"time":"00:47:05",
+		"content":"CQD IN 41.46N 50.14W"
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Californian",
+		"time":"00:47:22",
+		"content":"WANTS IMMEDIATE ASSISTANCE"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:50:00",
+		"content":"CQD CQD THIS IS TITANIC"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:50:12",
+		"content":"I REQUIRE IMMEDIATE ASSISTANCE"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:50:30",
+		"content":"POSITION 41.46N 50.14W"
+		},
+		{
+		"sender":"Caronia",
+		"intended_recipient":"Baltic",
+		"time":"00:50:55",
+		"content":"SOS CQD TITANIC IN 41.46N 50.14W"
+		},
+		{
+		"sender":"Caronia",
+		"time":"00:51:20",
+		"content":"WANTS IMMEDIATE ASSISTANCE."
+		},
+		{
+		"sender":"Baltic",
+		"intended_recipient":"Caronia",
+		"time":"00:51:45",
+		"content":"RECEIVED."
+		},
+		{
+		"sender":"Mount Temple",
+		"intended_recipient":"all ships",
+		"time":"00:53:00",
+		"content":"TITANIC CALLING SOS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:53:15",
+		"content":"CQD CQD SOS SOS SOS CQD CQD"
+		},
+		{
+		"sender":"Titanic",
+		"time":"00:53:30",
+		"content":"THIS IS TITANIC 41.46N 50.14W"
+		},
+		{
+		"sender":"Olympic",
+		"intended_recipient":"Titanic",
+		"time":"01:00:00",
+		"content":"WHO HAS STRUCK AN ICEBERG?"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:00:25",
+		"content":"THIS IS TITANIC"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:00:35",
+		"content":"WE HAVE STRUCK AN ICEBERG. POSITION 41.46N 50.14W"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:01:00",
+		"content":"TELL CAPTAIN."
+		},
+		{
+		"sender":"Olympic",
+		"time":"01:01:15",
+		"content":"RECEIVED OK."
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:02:00",
+		"content":"CQD CQD SOS SOS"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Asian",
+		"time":"01:03:00",
+		"content":"WANT IMMEDIATE ASSISTANCE. POSITION 41.46N 50.14W"
+		},
+		{
+		"sender":"Asian",
+		"intended_recipient":"Titanic",
+		"time":"01:03:25",
+		"content":"RECEIVED."
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Virginian",
+		"time":"01:03:35",
+		"content":"REPORT TO YOUR CAPTAIN TITANIC HAS STRUCK ICEBERG AND REQUIRES IMMEDIATE ASSISTANCE."
+		},
+		{
+		"sender":"Virginian",
+		"intended_recipient":"Cape Race",
+		"time":"01:04:05",
+		"content":"RECEIVED."
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Titanic",
+		"time":"01:05:00",
+		"content":"WE ARE COMING YOUR WAY"
+		},
+		{
+		"sender":"Carpathia",
+		"time":"01:05:15",
+		"content":"COMING AT FULL SPEED DOING 15 KNOTS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:05:35",
+		"content":"RECEIVED"
 		}
 	]
 }
