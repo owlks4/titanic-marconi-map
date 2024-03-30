@@ -1,8 +1,6 @@
-# Titanic Marconi Messages Map
+# Titanic Marconi messages map
 
-A 3D map depicting the exchange of wireless messages in the North Atlantic on April 15th, 1912 - the morning the Titanic sank.
-
-('Marconi' refers to the Marconi wireless communication technology employed by most of the ships on the map.)
+A 3D map depicting the exchange of wireless messages in the North Atlantic on April 15th, 1912 - the night the Titanic sank. (Marconi: the wireless communication technology employed by most of the ships on the map.)
 
 ## Instructions:
 
@@ -10,9 +8,9 @@ A 3D map depicting the exchange of wireless messages in the North Atlantic on Ap
 * Right mouse button + drag: Move camera.
 * Scroll: Zoom in/out.
 
-Use the slider to change the time, and mouse over the messages to see them in Morse Code - which is how the messages were actually being delivered.
+Use the slider to change the time, and mouse over the messages to see them in Morse Code - which is how the messages would actually have been delivered.
 
-You can always use the next/previous message buttons at the top to speed along to the next or previous mssage if you find yourself in a long, messageless stretch.
+You can also use the next/previous message buttons at the top to quickly flit along the timeline.
 
 ## Sources
 
