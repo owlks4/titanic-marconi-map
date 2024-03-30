@@ -1,6 +1,8 @@
-# Titanic Marconi Map
+# Titanic Marconi Messages Map
 
 A 3D map depicting the exchange of wireless messages in the North Atlantic on April 15th, 1912 - the morning the Titanic sank.
+
+('Marconi' refers to the Marconi wireless communication technology employed by most of the ships on the map.)
 
 ## Instructions:
 
