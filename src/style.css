@@ -94,11 +94,20 @@ canvas:active {
   text-align: center;
   color: rgba(255, 255, 255, 0.85);
   user-select: none;
+  height:100%;
+  margin:0;
+  pointer-events: none;
 }
 
 #time-display {
   margin-top: 0;
   letter-spacing: 0.05em;
+}
+
+#time-range {
+  pointer-events: all;
+  width:40em;
+  max-width:90%;
 }
 
 .speech-bubble-tail {
@@ -158,4 +167,14 @@ canvas:active {
   background-color: #0a0a0a;
   cursor:pointer;
   line-height: 0.5em;
+  transition: border 0.05s;
+  pointer-events: all;
+}
+
+.skip-button:hover {
+  border: 1px solid #4b56ca;
+}
+
+.skip-button:active {
+  border: 1px solid #5561e6;
 }

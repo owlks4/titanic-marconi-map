@@ -548,6 +548,17 @@
 		"content":"PLEASE TELL TITANIC WE ARE MAKING TOWARDS HER. WE ARE 243 MILES EAST OF TITANIC."
 		},
 		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"01:27:25",
+		"content":"OUR CAPTAIN WILL GO FOR YOUR COURSE"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:27:50",
+		"content":"OK THANKS."
+		},
+		{
 		"sender":"Virginian",
 		"intended_recipient":"Cape Race",
 		"time":"01:32:00",
@@ -607,6 +618,246 @@
 		"sender":"Olympic",
 		"time":"01:40:05",
 		"content":"RECEIVED"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:42:00",
+		"content":"WE ARE PUTTING THE WOMEN OFF IN THE BOATS. WE ARE PUTTING PASSENGERS OFF IN SMALL BOATS."
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:42:30",
+		"content":"WOMEN AND CHILDREN IN BOATS. CANNOT LAST MUCH LONGER. LOSING POWER"
+		},
+		{
+		"sender":"Olympic",
+		"intended_recipient":"Titanic",
+		"time":"01:47:00",
+		"content":"WHAT WEATHER HAVE YOU HAD?"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:47:15",
+		"content":"CLEAR AND CALM."
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:47:30",
+		"content":"THIS IS TITANIC"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:47:45",
+		"subscript":"(1/2)",
+		"content":"ENGINE ROOM GETTING FLOODED"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:48:00",
+		"subscript":"(2/2)",
+		"content":"ENGINE ROOM GETTING FLOODED"
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"01:48:20",
+		"content":"ARE THERE ANY BOATS AROUND YOU ALREADY"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:48:45",
+		"content":"CQD SOS CQD SOS CQD SOS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:48:55",
+		"subscript":"(1/2)",
+		"content":"ENGINE ROOM FLOODED"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:49:15",
+		"subscript":"(2/2)",
+		"content":"ENGINE ROOM FLOODED"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:49:40",
+		"content":"CQD SOS CQD SOS"
+		},
+		{
+		"sender":"Baltic",
+		"intended_recipient":"Titanic",
+		"time":"01:49:55",
+		"content":"BALTIC COMING 200 MILES EAST. WE ARE RUSHING TO YOU."
+		},
+		{
+		"sender":"Olympic",
+		"intended_recipient":"Titanic",
+		"time":"01:52:00",
+		"content":"AM LIGHTING UP ALL POSSIBLE BOILERS AS FAST AS WE CAN."
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Virginian",
+		"time":"01:52:30",
+		"content":"PLEASE TELL YOUR CAPTAIN THIS: OLYMPIC IS MAKING ALL SPEED FOR TITANIC BUT OLYMPIC IS 500 MILES AWAY FROM HER."
+		},
+		{
+		"sender":"Cape Race",
+		"time":"01:52:55",
+		"content":"VIRGINIAN YOU ARE MUCH CLOSER TO TITANIC"
+		},
+		{
+		"sender":"Cape Race",
+		"time":"01:53:10",
+		"content":"TITANIC IS ALREADY PUTTING WOMEN OFF IN THE BOATS AND HE SAYS THE WEATHER THERE IS CALM AND CLEAR. THE OTHERS MUST BE A LONG WAY FROM TITANIC."
+		},
+		{
+		"sender":"Virginian",
+		"intended_recipient":"Cape Race",
+		"time":"01:53:50",
+		"content":"OK. PUTTING ON SPEED."
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:55:30",
+		"content":"CQD CQD SOS SOS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"01:55:45",
+		"content":"THIS IS TITANIC"
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Titanic",
+		"time":"01:56:00",
+		"content":"BALTIC COMING TO YOUR ASSISTANCE."
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Carpathia",
+		"time":"01:57:00",
+		"content":"COME AS QUICKLY AS POSSIBLE OLD MAN. THE ENGINE ROOM IS FILLING UP TO THE BOILERS."
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Titanic",
+		"time":"01:57:30",
+		"content":"RECEIVED"
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"01:59:00",
+		"content":"ARE THERE ANY BOATS AROUND YOU ALREADY"
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:00:00",
+		"content":"CQD CQD CQD SOS SOS SOS"
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:00:15",
+		"content":"CQD THIS IS TITANIC"
+		},
+		{
+		"sender":"Carpathia",
+		"time":"02:00:30",
+		"content":"CARPATHIA TO TITANIC"
+		},
+		{
+		"sender":"Birma",
+		"time":"02:00:45",
+		"content":"BIRMA TO TITANIC"
+		},
+		{
+		"sender":"Titanic",
+		"intended_recipient":"Carpathia",
+		"time":"02:00:40",
+		"content":"COME QUICK. SHE'S TAKING ON WATER. IT'S FULL UP TO THE BOILERS."
+		},
+		{
+		"sender":"Carpathia",
+		"intended_recipient":"Titanic",
+		"time":"02:01:05",
+		"content":"ALL OUR BOATS ARE READY. WE ARE COMING AS HARD AS WE CAN OLD MAN."
+		},
+		{
+		"sender":"Carpathia",
+		"time":"02:01:25",
+		"content":"DOUBLE WATCH ON ENGINE ROOM. HAVE YOUR LIFEBOATS READY WHEN WE ARRIVE"
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:01:45",
+		"content":"COME AS QUICKLY AS POSSIBLE OLD MAN. CQD SOS SOS SOS CQD"
+		},
+		{
+		"sender":"Asian",
+		"time":"02:02:05",
+		"content":"ASIAN TO TITANIC"
+		},
+		{
+		"sender":"Frankfurt",
+		"intended_recipient":"Titanic",
+		"time":"02:02:15",
+		"content":"WE ARE 100 MILES OFF. WHAT IS THE MATTER WITH YOU?"
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:02:35",
+		"content":"FOOL. YOU FOOL. STAND BY. STAND BY. STAND BY AND KEEP OUT. KEEP OUT."
+		},
+		{
+		"sender":"Baltic",
+		"intended_recipient":"Caronia",
+		"time":"02:02:50",
+		"content":"WE ARE HEADING FOR TITANIC BUT I CAN'T AGREE TO SIGNALS."
+		},
+		{
+		"sender":"Caronia",
+		"intended_recipient":"Baltic",
+		"time":"02:02:50",
+		"content":"TITANIC GIVES CQD AND SOS HER ENGINE ROOM IS FILLING UP TO THE BOILERS"
+		},
+		{
+		"sender":"Asian",
+		"intended_recipient":"Cape Race",
+		"time":"02:03:15",
+		"content":"HAVE CALLED TITANIC BUT NO REPLY. HE CANNOT HEAR ME."
+		},
+		{
+		"sender":"Baltic",
+		"intended_recipient":"Cape Race",
+		"time":"02:03:50",
+		"content":"TITANIC SIGNAL VERY WEAK. DO YOU HAVE NEWS OF TITANIC?"
+		},
+		{
+		"sender":"Cape Race",
+		"intended_recipient":"Baltic",
+		"time":"02:04:15",
+		"content":"WE HAVE NOT HEARD FROM TITANIC FOR ABOUT HALF AN HOUR. HIS POWER MAY BE GONE."
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:15:00",
+		"subscript":"(1/2)",
+		"content":"V"
+		},
+		{
+		"sender":"Titanic",
+		"time":"02:15:05",
+		"subscript":"(2/2)",
+		"content":"V"
+		},
+		{
+		"sender":"Virginian",
+		"intended_recipient":"Titanic",
+		"time":"02:15:30",
+		"content":"CANNOT READ YOUR SIGNAL. YOU NEED TO TRY YOUR EMERGENCY SET."
 		}
 	]
 }

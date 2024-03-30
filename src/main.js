@@ -1,16 +1,19 @@
 import "./style.css";
 import { GLTFLoader } from "./GLTFLoader.js";
-import {createScene,scene,renderer,controls,camera,spawn2DText,labelRenderer} from "./scene3d.js";
+import {createScene,scene,renderer,controls,camera,spawn2DText,labelRenderer,setDistBetweenCameraAndTargetFromCamAndTargetPos} from "./scene3d.js";
 import atlantic from "/atlantic.gltf?url"
 import marconiMessagesUrl from "/marconiMessages.json?url"
 import {toMorseCodeFromText, shipNameAbbreviations, playMorseCodeAsTone} from "./morseCode.js"
 import {STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT, END_TIME_IN_MINUTES_SINCE_MIDNIGHT, TIMESCALE} from "./consts.js"
+import { Vector3 } from "three";
 
 createScene();
 
 let TIME_DISPLAY = document.getElementById("time-display")
 let TIME_RANGE = document.getElementById("time-range");
 TIME_RANGE.value = 0;
+
+let titleText = document.getElementById("titleText");
 
 document.getElementById("next-message-button").onclick = () => {
   for (let i = 0; i < marconiMessages.messages.length; i++){
@@ -106,7 +109,7 @@ function displayCurrentMarconiMessage(){
 
   if (potentialMessageForDisplay != currentMessage){
 
-    if (currentMessage != null && currentMessageTextElements != null){
+    if (currentMessage != null && currentMessageTextElements != null && currentMessageTextElements[0] != null && currentMessageTextElements[1] != null){
       currentMessageTextElements[0].remove(currentMessageTextElements[1])
     }
 
@@ -169,6 +172,7 @@ async function start() {
         TIME_RANGE.value = (titanic_time_minutes_since_midnight - STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT) / (END_TIME_IN_MINUTES_SINCE_MIDNIGHT - STARTING_TIME_IN_MINUTES_SINCE_MIDNIGHT)
       }
       controls.update();
+      setDistBetweenCameraAndTargetFromCamAndTargetPos(camera.position.distanceTo(controls.target))
       renderer.render( scene, camera );
       labelRenderer.render( scene, camera );
     }

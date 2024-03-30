@@ -67,6 +67,9 @@ const shipNameAbbreviations = {
     "attention all stations":"CQ",
     "all stations":"CQ",
     "stop talking":"DDD",
+    "stand by":"STDBI",
+    "thanks":"TKS",
+    "your":"UR",
     "this is":"DE",
     "old man":"OM",
     "Titanic":"MGY",
@@ -150,6 +153,8 @@ async function playMorseCodeAsTone(morse, message, overrideTimeScale){
         }
         await new Promise(r => setTimeout(r, (DIT_LENGTH * 3) / (overrideTimeScale ? 1 : TIMESCALE)));
     }
+
+    currentlyPlayingMorseMessage = null;
 }
 
 export {toMorseCodeFromText,shipNameAbbreviations, playMorseCodeAsTone}

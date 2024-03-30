@@ -9,6 +9,13 @@ let controls = null;
 let camera = null;
 let font = null;
 let labelRenderer = null;
+let unknownLocationMessageParent = document.getElementById("unknown-location-message-parent");
+let dist_between_camera_and_target = 0;
+
+function setDistBetweenCameraAndTargetFromCamAndTargetPos(newValue){
+    dist_between_camera_and_target = newValue;
+    return dist_between_camera_and_target
+}
 
 function createScene(){
     scene = new THREE.Scene();
@@ -60,7 +67,7 @@ function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributio
     morseHolder.onclick = () => {playMorseCodeAsTone(morseHolder.textContent,{},true)}
     div.appendChild(morseHolder);
 
-    if (extraTextClass == "message-box"){
+    if (parentObject != null && extraTextClass == "message-box"){
         let speechBubbleTail = document.createElement('div');
         speechBubbleTail.className = "speech-bubble-tail";
         div.appendChild(speechBubbleTail);
@@ -80,19 +87,36 @@ function spawn2DText(parentObject, text, yMultiplier, extraTextClass, attributio
         div.appendChild(subscriptDiv);
     }
 
-    let boundingBox = new THREE.Box3().setFromObject(parentObject);
-    let height = boundingBox.max.y - boundingBox.min.y;
+    let label = null;
+    unknownLocationMessageParent.innerHTML = "";
 
-    if (yMultiplier == null){
-        yMultiplier = 1;
+    if (parentObject == null){
+        unknownLocationMessageParent.appendChild(div);        
+    } else {
+        let boundingBox = new THREE.Box3().setFromObject(parentObject);
+        let height = boundingBox.max.y - boundingBox.min.y;
+    
+        if (yMultiplier == null){
+            yMultiplier = 1;
+        }
+        label = new CSS2DObject(div);
+        label.position.set(0, (yMultiplier * height) + (extraTextClass == "message-box" ? getYOffsetForMessageBasedOnCamDist() : 0), 0);
+        label.center.set( 0.5, 1 );
+        parentObject.add(label);
+        label.layers.set( 0 );
     }
-	const label = new CSS2DObject(div);
-	label.position.set(0, yMultiplier * height, 0);
-	label.center.set( 0.5, 1 );
-	parentObject.add(label);
-	label.layers.set( 0 );
 
     return [parentObject, label];
 }
 
-export {createScene,scene,renderer,controls,camera, spawn2DText,labelRenderer}
+function getYOffsetForMessageBasedOnCamDist(){
+
+    let min = 100;
+    let max = 200;
+
+    let step = (dist_between_camera_and_target - min) / (max - min);
+
+    return step * 5;
+}
+
+export {createScene,scene,renderer,controls,camera, spawn2DText,labelRenderer,setDistBetweenCameraAndTargetFromCamAndTargetPos}
