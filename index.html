@@ -5,19 +5,25 @@
     <link rel="icon" type="image/svg+xml" href="https://owlks4.github.io/titanic-marconi-signals-map/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Titanic Marconi signals map</title>
-    <script type="module" crossorigin src="https://owlks4.github.io/titanic-marconi-signals-map/assets/index--18n2d2B.js"></script>
-    <link rel="stylesheet" crossorigin href="https://owlks4.github.io/titanic-marconi-signals-map/assets/index-vehXmbMd.css">
+    <script type="module" crossorigin src="https://owlks4.github.io/titanic-marconi-signals-map/assets/index-4I0p8fJZ.js"></script>
+    <link rel="stylesheet" crossorigin href="https://owlks4.github.io/titanic-marconi-signals-map/assets/index--hTST-I6.css">
   </head>
   <body>
     <div id="centred-absolute">
       <div class="label-FORMERLY" style="text-align:center; margin-bottom:0">
-        <h2 class="label-toggle text" style="max-width:unset;text-align:center;">April 15, 1912</h2>
+        <h2 class="label-toggle text" style="max-width:unset;text-align:center;" id="titleText">April 15, 1912</h2>
         <template id="the title turning into morse code on mouseover was really neat, but it was a bit distracting, so I've retired it by putting it in a template">
           <h2 class="label-toggle morse" style="max-width:unset;text-align:center; cursor:pointer" title="April 15, 1912">.- .--. .-. .. .-.. / .---- ..... --..-- / .---- ----. .---- ..---</h2>
         </template>
       </div>
-      <h3 id="time-display"></h3>
-      <input id="time-range" type="range" style="width:40em; max-width:90%;" min="0" max="1" step="0.005">
+      <div style="display:flex;align-items:center;justify-content:center;">
+        <div class="skip-button" id="prev-message-button" title="Go to previous message">&lt;&lt;</div>
+        <h3 id="time-display"></h3>
+        <div class="skip-button" id="next-message-button" title="Go to next message">&gt;&gt;</div>
+      </div>
+      <input id="time-range" type="range" min="0" max="1" step="0.005">
+      <div id="unknown-location-message-parent" style="bottom:10%;position:absolute;left:50%;transform:translate(-50%,-50%)">
+      </div>
     </div>
   </body>
 </html>
